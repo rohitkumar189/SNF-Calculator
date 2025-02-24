@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNF Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #5cb85c;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    .developed-by {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f8f9fa; /* Light gray background */
+  font-size: 14px;
+  color: #6c757d; /* Subtle text color */
+}
+
+.developed-by a {
+  color: #007bff; /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.developed-by a:hover {
+  color: #0056b3; /* Darker color on hover */
+  text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <h1>SNF Calculator</h1>
+    <form id="snfForm">
+        <label for="clr">CLR: at 29°C</label><br>
+        <input type="number" id="clr" name="clr" placeholder="Enter CLR" step="0.01" required><br>
+        <label for="fat">Fat Percentage (%):</label><br>
+        <input type="number" id="fat" name="fat" placeholder="Enter Fat Percentage" step="0.01" required><br>
+        <button type="button" onclick="calculateSNF()">Calculate SNF</button>
+    </form>
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculateSNF() {
+            const clr = parseFloat(document.getElementById('clr').value);
+            const fat = parseFloat(document.getElementById('fat').value);
+
+            if (isNaN(clr) || isNaN(fat)) {
+                document.getElementById('result').innerText = "Please enter valid numbers for CLR and Fat.";
+                return;
+            }
+
+            const snf = (clr / 4) + (0.20 * fat) + 0.66;
+            const snfMultiplied = snf * 10; // Multiply non-rounded SNF by 10
+            const roundedSNF = Math.round(snfMultiplied); // Rounded SNF
+            
+            // Display both values
+            document.getElementById('result').innerHTML = `
+                <p>SNF (Non-rounded): ${snfMultiplied.toFixed(2)}</p>
+                <p>SNF (Rounded): ${roundedSNF}</p>
+            `;
+        }
+    </script>
+    <footer class="developed-by">
+  <p>Developed by <a href="https://www.instagram.com/rohit_dolkay?igsh=c2Vqd2EybHQ2NGJv" target="_blank">@rohit_dolkay</a></p>
+</footer>
+</body>
+</html>
