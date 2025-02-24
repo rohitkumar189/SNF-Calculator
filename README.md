@@ -10,9 +10,13 @@ This tool is perfect for dairy farmers, milk processors, and quality analysts to
 ✨ Features
 
 ✅ Quick & Accurate SNF Calculation
+
 ✅ Enter CLR & Fat % to get precise results
+
 ✅ User-Friendly Interface – No complex formulas needed
+
 ✅ Lightweight & Open-Source – No installation required
+
 ✅ Helps in Milk Quality & Pricing Assessment
 
 📊 How It Works?
