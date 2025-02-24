@@ -2,7 +2,9 @@
 
 📌 About
 The SNF (Solid-Not-Fat) Calculator is a free and easy-to-use tool designed to calculate the Solid-Not-Fat (SNF) value of milk using:
+
 ✔ Corrected Lactometer Reading (CLR) at 29°C
+
 ✔ Fat % value
 
 This tool is perfect for dairy farmers, milk processors, and quality analysts to assess milk quality & pricing!
